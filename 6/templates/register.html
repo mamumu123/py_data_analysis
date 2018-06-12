@@ -1,0 +1,34 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}注册{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href=" {{ url_for('static',filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id="main">
+	<form action="#" method="post" onsubmit="return check_reg()">
+		<label for="username">用户名</label>
+		<input type='text' name='username' id="username"><br>
+		<label for="password">密码</label>
+		<input type='password' name='password' id="password"><br>
+		<label for="repassword">确认密码</label>
+		<input type='password' name='password' id="repassword"><br>
+		<input type='submit' value="注册" id="submit" class="btn btn-primary">
+	</form>
+	<a href="/login">
+		<button class="btn">先去登陆</button>
+	</a>
+	<div id="error_msg">
+	</div>
+	{% if errorMessage %}
+	{{errorMessage}}
+	{% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static',filename='js/lib/jq.js') }}"></script>
+<script src="{{ url_for('static',filename='js/register.js') }}"></script>
+{% endblock %}

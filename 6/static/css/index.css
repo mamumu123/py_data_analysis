@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body [v-cloak] {
+  display: none;
+}
+body #tabs-360246 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #tabs-360246 .sin_div {
+  width: 80%;
+}
+body table {
+  margin-top: 15px;
+  border-collapse: collapse;
+  border: 1px solid #aaa;
+  width: 700px;
+}
+body table th {
+  vertical-align: baseline;
+  padding: 5px 15px 5px 6px;
+  background-color: #3F3F3F;
+  border: 1px solid #3F3F3F;
+  text-align: left;
+  color: #fff;
+}
+body table td {
+  vertical-align: text-top;
+  padding: 6px 15px 6px 6px;
+  border: 1px solid #aaa;
+}
+body table tr:nth-child(odd) {
+  background-color: #F5F5F5;
+}
+body table tr:nth-child(even) {
+  background-color: #fff;
+}
+/*# sourceMappingURL=index.css.map */

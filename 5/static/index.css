@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: aliceblue;
+}
+body .container .left {
+  min-height: 500px;
+  border: 1px solid black;
+}
+body .container .left table {
+  margin: 0 auto;
+}
+body .container .left tr,
+body .container .left td {
+  min-height: 25px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+body .container .center {
+  border: 1px solid black;
+  min-height: 500px;
+}
+body .container .right {
+  min-height: 500px;
+  border: 1px solid black;
+}
+body .container .right table {
+  margin: 0 auto;
+}
+body .container .right #insert_score tr,
+body .container .right #insert_score td {
+  min-height: 25px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+/*# sourceMappingURL=index.css.map */

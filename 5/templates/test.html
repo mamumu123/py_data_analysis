@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		#show {
+			border: 3px solid greenyellow;
+			min-height: 100px;
+			width: 800px;
+		}
+	</style>
+</head>
+<body>
+<form action="" method="post">
+	<input type="text" name="ID">
+	<input type="submit" value="提交">
+</form>
+<div id="show">
+	{% if request.method=='POST' %}
+		<p>以下是CUST_CODE={{ id }}的信息</p>
+		{% for per in  message %}
+
+			<p>{{ per }}</p>
+		{% endfor %}
+	{% endif %}
+</div>
+</body>
+</html>

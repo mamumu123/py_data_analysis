@@ -1,0 +1,96 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}选课系统{% endblock %}
+{% block head %}
+	{{ super() }}
+	<link rel="stylesheet" href=" {{ url_for('static',filename='index.css') }}">
+{% endblock %}
+
+
+{% block content %}
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-4 left">
+				<h3>数据查询</h3>
+				<input type="text" id="query_name"><br>
+				<input type="button" value="所有学生" id="c1">
+				<input type="button" value="所有老师" id="c2">
+				<input type="button" value="姓名查询" id="c3">
+				<input type="button" value="任课关系" id="c4">
+				<input type="button" value="选课关系" id="c5">
+				<hr>
+				<div id="chaxun_show"></div>
+			</div>
+			<div class="col-md-4 center">
+				<h3>数据展示</h3>
+				{% for key,v in  count_message.items() %}
+					<p>{{ key }}:{{ v }}</p>
+				{% endfor %}
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+			<div class="col-md-4 right">
+				<h3>数据录入</h3>
+				<p>教师选课</p>
+				{#			add_choice      #}
+				<select id="teacher" name="teacher">
+					<option value="-1">教师</option>
+					{% for k in  all_message['teacher'] %}
+						<option value="{{ k[0] }}">{{ k[0] }}{{ ' '+k[1] }}</option>
+					{% endfor %}
+				</select>
+				<select id="teaLesson" name="tbLesson">
+					<option value="-1">课程</option>
+					{% for k in  all_message['tbLesson'] %}
+						<option value="{{ k[0] }}">{{ k[0] }}{{ ' '+k[1] }}</option>
+					{% endfor %}
+				</select>
+				<br>
+				<p><span id="add_01" style="color: red"></span>担任<span id="add_02" style="color: red"></span></p>
+				<input type="button" id="add1" value="确认">
+				<hr>
+				{#			add_choice      #}
+				<p>学生选课</p>
+				<select id="student" name="student">
+					<option value="-1">学生</option>
+					{% for k in  all_message['student'] %}
+						<option value="{{ k[0] }}">{{ k[0] }}{{ ' '+k[1] }}</option>
+					{% endfor %}
+				</select>
+				<select id="stuLesson" name="stuLesson">
+					<option value="-1">课程</option>
+					{% for k in  all_message['tbLesson'] %}
+						<option value="{{ k[0] }}">{{ k[0] }}{{ ' '+k[1] }}</option>
+					{% endfor %}
+				</select>
+				<p><span id="add_11" style="color: red"></span>选修<span id="add_12" style="color: red"></span></p>
+				<input type="button" id="add2" value="确认">
+				<hr>
+				<p>成绩录入</p>
+				<select id="select_lesson" name="select_lesson">
+					<option value="-1">课程</option>
+					{% for k in  all_message['tbLesson'] %}
+						<option value="{{ k[0] }}">{{ k[0] }}{{ ' '+k[1] }}</option>
+					{% endfor %}
+				</select>
+				<input type="button" id="lesson_btn" value="确认">
+				<form id="input_form">
+					<div id="insert_score"></div>
+					<input type="button" id="add_score" value="提交" style="display: none">
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+{% block scripts %}
+	{{ super() }}
+	<script src="{{ url_for('static',filename='js/lib/jq.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/index.js') }}">
+	</script>
+{% endblock %}
+
